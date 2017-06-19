@@ -295,23 +295,11 @@ def listar():
       texto = str(listao[i][0]) + ' '+listao[i][1][1][0]+' '+listao[i][1][1][1]+' '+listao[i][1][1][2]+' '+listao[i][1][0]+' '+listao[i][1][1][3]+' '+listao[i][1][1][4]
       itensListar.append(texto)
       i+=1
-
     j = 0 
     while j < len(itensListar):
-      l = 0
-      listatemp = []
-      while l<len(itensListar[j]):
-        listatemp = itensListar[j].split(' ')
-        m = 1
-        while m<len(listatemp):
-          if listatemp[m] == '':
-            del listatemp[m]
-          m+=1
-        l+=1
-        
-      print(listatemp)    
+      print(itensListar[j])   
       j +=1
-    
+  
 # printCores('Oi mundo!', RED)
 # printCores('Texto amarelo e negrito', YELLOW + BOLD)
   
@@ -319,6 +307,13 @@ def listar():
       
     return 
 
+#         m = 0
+ #       limp = ''
+ #       while m<len(listatemp):
+ #         if listatemp != '':
+ #           limp = listatemp[m]
+ #         m+=1
+ #       print(limp)
 
 def ordenarPorDataHora(itens):
 
@@ -351,13 +346,27 @@ def ordenarPorPrioridade(itens):
 
   return listao
 
+def lerArquivoLinhas():
+    f = open("todo.txt",'r')
+    lista = []
+    for i in f:
+        lista.append(i)
+  #  removerBarraNLinhas(lista)
+    f.close()
+    return lista
+
 def fazer(num):
 
   ################ COMPLETAR
 
   return 
 
-def remover():
+def remover(num):
+  f = open("todo.txt",'a')
+  for x in todo:
+    if num == x
+  
+  
 
   ################ COMPLETAR
 
@@ -392,6 +401,7 @@ def processarComandos(comandos) :
     return  lista
 
   elif comandos[1] == REMOVER:
+    remover(comandos[2])
     return    
 
     ################ COMPLETAR    
