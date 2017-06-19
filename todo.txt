@@ -1,0 +1,16 @@
+﻿2300 dormir cedo @casa
+0500 acordade cedo @casa
+18062017 2359 (A) entrega projeto p1 +IF968
+18062017 1200 (A) terminar projeto p1 @casa +IF968
+(E) criar kits de ensaio +IV
+(D) estudar php e MySQL +Agenda
+comprar presente de Heloísa @shopping
+1200 almoçar dieta @trabalho +dieta 
+teste de insert
+teste de insert
+0800 (B) crimpar cabos de rede da oftalmologia @trabalho +oftalmologia
+crimpar cabos de rede da oftalmologia
+20062017 0800 (B) crimpar cabos de rede da oftalmologia @trabalho +oftalmologia
+carregar celular  
+2330 (B) carregar celular @casa   upar no GITHUB o projeto P1   
+18062017 2330  upar no GITHUB o projeto P1 @casatio +IF968
