@@ -55,32 +55,38 @@ def adicionar(descricao, extras):
   contexto = ''
   projeto = ''
      
-  if dataValida(lExtras[0]):
-    data = lExtras[0]
-    del lExtras[0]
+
+  if len(lExtras)>=1:
+    if dataValida(lExtras[0]):
+      data = lExtras[0]
+      del lExtras[0]
       
-  if horaValida(lExtras[0]):
-    hora = lExtras[0]
-    del lExtras[0]
+  if len(lExtras)>=1:
+    if horaValida(lExtras[0]):
+      hora = lExtras[0]
+      del lExtras[0]
   
-  if prioridadeValida(lExtras[0]):
-    pri = lExtras[0]
-    del lExtras[0]
+  if len(lExtras)>=1:
+    if prioridadeValida(lExtras[0]):
+      pri = lExtras[0]
+      del lExtras[0]
   
-  if contextoValido(lExtras[0]):
-    contexto = lExtras[0]
-    del lExtras[0]
+  if len(lExtras)>=1:
+    if contextoValido(lExtras[0]):
+      contexto = lExtras[0]
+      del lExtras[0]
   
-  if projetoValido(lExtras[0]):
-    projeto = lExtras[0]
-    del lExtras[0]
+  if len(lExtras)>=1:
+    if projetoValido(lExtras[0]):
+      projeto = lExtras[0]
+      del lExtras[0]
   
-    
+   
   novaAtividade = data +' '+ hora+' ' + pri+' ' + desc+' ' + contexto+' ' + projeto
 
   # Escreve no TODO_FILE. 
   try: 
-    fp = open(TODO_FILE, 'a')
+    fp = open(TODO_FILE, 'a',encoding="utf8")
     fp.write("\n" + novaAtividade)
     fp.close()
   except IOError as err:
@@ -276,7 +282,7 @@ def organizar(linhas):
     
 
 def listar():
-    f = open("C:/p/todo.txt","r")
+    f = open("C:/p/todo.txt","r",encoding="utf8")
     dados = f.read()
     f.close
     itens = organizar(dados)
@@ -346,12 +352,11 @@ def ordenarPorPrioridade(itens):
 
   return listao
 
-def lerArquivoLinhas():
-    f = open("todo.txt",'r')
+def lerTodoLinhas():
+    f = open(TODO_FILE,'r',encoding="utf8")
     lista = []
     for i in f:
         lista.append(i)
-  #  removerBarraNLinhas(lista)
     f.close()
     return lista
 
@@ -362,15 +367,27 @@ def fazer(num):
   return 
 
 def remover(num):
-  f = open("todo.txt",'a')
-  for x in todo:
-    if num == x
+  ordem = int(num) - 1
+  todo = lerTodoLinhas()
+  if num<=0:
+    return print('Este número não corresponde a uma atividade')
+  if ordem< len(todo):
+    del todo[ordem]
+    f = open(TODO_FILE,'w')
+    f.writelines(todo)
+    f.close()
+    return print('Atividade removida com Sucesso')
+  else:
+    return print('Este número não corresponde a uma atividade')
+    
+  
   
   
 
   ################ COMPLETAR
 
   return
+
 
 # prioridade é uma letra entre A a Z, onde A é a mais alta e Z a mais baixa.
 # num é o número da atividade cuja prioridade se planeja modificar, conforme
